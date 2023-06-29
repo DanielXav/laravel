@@ -1,6 +1,6 @@
 <x-layout title="Relatório">
     <div class="mb-3">
-        <label for="mes" class="form-label">Selecione o mês:</label>
+        <label for="mes" class="form-label">Selecione o mêes:</label>
         <select class="form-select" id="mes" name="mes">
             <option value="1">Janeiro</option>
             <option value="2">Fevereiro</option>
