@@ -6,6 +6,7 @@ use App\Http\Requests\ClientesFormRequest;
 use App\Models\Cliente;
 use Illuminate\Http\Request;
 use Illuminate\Validation\ValidationException;
+use Illuminate\Support\Facades\Redirect;
 
 class ClientesController extends Controller
 {
@@ -60,7 +61,7 @@ class ClientesController extends Controller
         $cliente->delete();
         //$request->session()->flash();
 
-        return to_route('clientes.index')
+        return redirect()->route('clientes.index')
             ->with('mensagem.sucesso', "Cliente '{$cliente->nome}' removido com sucesso");
     }
 
@@ -75,7 +76,7 @@ class ClientesController extends Controller
         $cliente->fill($request->all()); // Todos os atributos
         $cliente->save();
 
-        return to_route('clientes.index')
+        return redirect()->route('clientes.index')
             ->with('mensagem.sucesso', "Cliente '{$cliente->nome}' atualizado com sucesso");
     }
 

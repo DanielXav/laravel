@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('nome', 128);
             //$table->foreignId('cpf_cliente')->constrained()->onDelete('cascade'); // Se deletar cliente, deleta evento junto
-            $table->string('cpf_cliente', 11);
+            $table->string('cpf_cliente', 14);
             $table->foreign('cpf_cliente')->references('cpf')->on('clientes')->onDelete('cascade');
             $table->string('tipo', 128);
             $table->double('orcamento')->nullable();
